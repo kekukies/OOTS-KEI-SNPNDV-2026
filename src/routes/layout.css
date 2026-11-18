@@ -7,29 +7,29 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-	/* Light Mode (Pink Muda Lembut) */
-	--bg: #fee3e8;        
-	--surface: #f9c7d2;   
-	--line: #e8b4b8;      
-	--ink: #5b3f3e;       
-	--muted: #8e7c7a;     
-	--primary: #d946ef;   /* Warna pink utama di light mode */
+	/* Light Mode (Nuansa Yellow Light & Kuning Hangat) */
+	--bg: #fefae0;        /* Background kuning muda gading yang bersih */
+	--surface: #faedcd;   /* Surface/Card kuning lembut */
+	--line: #d4a373;      /* Garis pembatas cokelat keemasan muda */
+	--ink: #38220f;       /* Teks gelap utama berkesan hangat */
+	--muted: #7f5539;     /* Teks sekunder cokelat lembut */
+	--primary: #dda15e;   /* Aksen kuning mustard/oranye hangat */
 	--on-primary: #ffffff;
-	--success: #047857;
-	--danger: #b91c1c;
+	--success: #386641;
+	--danger: #bc4749;
 }
 
 .dark {
-	/* Dark Mode dengan Dark Pink yang elegan */
-	--bg: #161615;        /* Background gelap */
-	--surface: #1f1f1d;   /* Surface/Card gelap */
-	--line: #2e2e2a;      /* Garis pembatas gelap */
-	--ink: #fcfcfa;       /* Teks terang */
-	--muted: #a3a39e;     /* Teks sekunder terang */
-	--primary: #ff5c8d;   /* Dark Pink pilihanmu untuk mode gelap */
-	--on-primary: #ffffff;
+	/* Dark Mode (Nuansa Gelap / Dark Golden Olive & Coffee Brown) */
+	--bg: #1c1917;        /* Background gelap natural */
+	--surface: #292524;   /* Surface/Card gelap */
+	--line: #44403c;      /* Garis pembatas gelap */
+	--ink: #f5f5f4;       /* Teks terang */
+	--muted: #a8a29e;     /* Teks sekunder terang */
+	--primary: #d4a373;   /* Aksen emas kecokelatan yang elegan di mode gelap */
+	--on-primary: #1c1917;
 	--success: #6ee7a0;
-	--danger: #fb8a8a;
+	--danger: #f87171;
 }
 
 @theme inline {
