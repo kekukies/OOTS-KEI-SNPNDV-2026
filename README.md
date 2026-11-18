@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # OOTS 2026 — Portofolio Pribadi
 
 Repo kerja Workshop OOTS 2026. Isinya satu halaman portofolio yang dibangun
@@ -73,3 +74,6 @@ tempel ke file yang sama di VS Code.
 
 Semua isi di sini masih contoh. Ganti nama, tagline, tiga proyek, dan
 foto dengan milik kalian sendiri sebelum 24.00 di hari kedua.
+=======
+# OOTS-KEI-2026
+>>>>>>> 3e6f8fd28f748ff672cf7ed18d387b975b7b933c

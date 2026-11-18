@@ -3,30 +3,31 @@
 @import '@fontsource/ibm-plex-mono/400.css';
 @import '@fontsource/ibm-plex-mono/500.css';
 
-/* Tema gelap dikendalikan class, bukan setting OS. Tanpa baris ini, `dark:`
-   mengikuti laptop masing-masing peserta dan tombol tema tidak berpengaruh. */
+/* Tema gelap dikendalikan class, bukan setting OS */
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-	--bg: #fcfcfa;
-	--surface: #f4f4f1;
-	--line: #e2e2dc;
-	--ink: #12120f;
-	--muted: #6b6b62;
-	--primary: #1d3fd1;
-	--on-primary: #fcfcfa;
+	/* Light Mode (Pink Muda Lembut) */
+	--bg: #fee3e8;        
+	--surface: #f9c7d2;   
+	--line: #e8b4b8;      
+	--ink: #5b3f3e;       
+	--muted: #8e7c7a;     
+	--primary: #d946ef;   /* Warna pink utama di light mode */
+	--on-primary: #ffffff;
 	--success: #047857;
 	--danger: #b91c1c;
 }
 
 .dark {
-	--bg: #0c0c0b;
-	--surface: #161615;
-	--line: #2b2b27;
-	--ink: #edece4;
-	--muted: #9c9c90;
-	--primary: #8aa4ff;
-	--on-primary: #0c0c0b;
+	/* Dark Mode dengan Dark Pink yang elegan */
+	--bg: #161615;        /* Background gelap */
+	--surface: #1f1f1d;   /* Surface/Card gelap */
+	--line: #2e2e2a;      /* Garis pembatas gelap */
+	--ink: #fcfcfa;       /* Teks terang */
+	--muted: #a3a39e;     /* Teks sekunder terang */
+	--primary: #ff5c8d;   /* Dark Pink pilihanmu untuk mode gelap */
+	--on-primary: #ffffff;
 	--success: #6ee7a0;
 	--danger: #fb8a8a;
 }
