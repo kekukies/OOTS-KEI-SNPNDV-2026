@@ -46,3 +46,32 @@
 	--font-mono: 'IBM Plex Mono', monospace;
 	--radius-xs: 2px;
 }
+
+/* Utility untuk foto agar otomatis proporsional & auto-fit */
+@utility img-fit {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	display: block;
+}
+
+@utility img-card {
+	width: 100%;
+	aspect-ratio: 4 / 3; /* Ubah ke 16 / 9 atau 1 / 1 sesuai kebutuhan */
+	object-fit: cover;
+	object-position: center;
+	border-radius: var(--radius-xs);
+	border: 1px solid var(--line);
+	background-color: var(--surface);
+}
+
+@utility img-avatar {
+	width: 100%;
+	height: 100%;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 9999px;
+	border: 1px solid var(--line);
+}

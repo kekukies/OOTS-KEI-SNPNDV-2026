@@ -15,7 +15,7 @@ export const projects = [
 		category: "GAME DEVELOPMENT",
 		year: "2026",
 		description: "Game aksi petualangan platformer over-world bertema kesatria dengan eksplorasi luas, rintangan menantang, dan mekanik pertarungan epik.",
-		tech: ["Construct 3", "Game Design", "Pixel Art"],
+		tech: ["Unity", "Game Design", "Pixel Art"],
 		link: "https://github.com/kekukies"
 	},
 	{
@@ -23,7 +23,7 @@ export const projects = [
 		category: "WEB APPLICATION",
 		year: "2026",
 		description: "Platform pemesanan makanan kantin sekolah berbasis web yang mempercepat transaksi dan meminimalisir antrean.",
-		tech: ["SvelteKit", "Tailwind CSS", "TypeScript"],
+		tech: [],
 		link: "https://github.com/kekukies"
 	},
 	{
@@ -31,7 +31,7 @@ export const projects = [
 		category: "FINANCE APP",
 		year: "2025",
 		description: "Aplikasi pencatatan tabungan dan keuangan harian yang dirancang untuk membantu mengelola anggaran secara praktis.",
-		tech: ["JavaScript", "Tailwind CSS"],
+		tech: [],
 		link: "https://github.com/kekukies"
 	},
 	{

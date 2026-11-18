@@ -766,13 +766,14 @@
 		</div>
 	</section>
 
-	<!-- kontak -->
+	<!-- kontak (Sudah Diperbaiki Menggunakan Grid 12 Kolom agar Tidak Sisa Banyak di Kanan) -->
 	<section id="kontak" class="border-t border-line">
 		<div class="mx-auto max-w-[1440px] px-6 pt-5 pb-14 lg:px-24 lg:pb-24">
 			<p class="font-mono text-[11px] tracking-[1.1px] text-ink">KONTAK</p>
 
-			<div class="mt-7 flex flex-col gap-8 lg:mt-10 lg:flex-row lg:gap-24">
-				<div class="flex max-w-[420px] flex-col gap-5">
+			<div class="mt-7 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start lg:mt-10">
+				<!-- Sisi Kiri (Teks & Tombol Salin Email) - Mengambil 5 Kolom -->
+				<div class="flex flex-col gap-5 lg:col-span-5">
 					<p class="text-[17px] leading-[1.6] text-muted lg:text-xl">
 						Punya pertanyaan atau ingin bekerja sama? Kirim pesan langsung lewat formulir atau salin email saya.
 					</p>
@@ -790,7 +791,7 @@
 					</div>
 				</div>
 
-				<!-- FORM KONTAK -->
+				<!-- Sisi Kanan (Form Kontak) - Mengambil 7 Kolom agar Melebar Penuh secara Seimbang -->
 				<form
 					method="POST"
 					action="?/kirim"
@@ -801,7 +802,7 @@
 							status = result.type === 'success' ? 'success' : 'error';
 						};
 					}}
-					class="flex w-full flex-col gap-4 lg:w-[440px] lg:shrink-0 p-6 rounded-2xl shadow-sm border border-line bg-surface"
+					class="flex w-full flex-col gap-4 lg:col-span-7 p-6 md:p-8 rounded-2xl shadow-sm border border-line bg-surface"
 				>
 					<label class="flex flex-col gap-2">
 						<span class="font-mono text-[11px] tracking-[1.1px] text-muted">NAMA</span>
@@ -988,22 +989,22 @@
 		{
 			title: "E-Canteen",
 			category: "WEB APPLICATION",
-			stack: "SvelteKit · Tailwind",
+			stack: "Apa Aja Boleh",
 			year: "2026",
 			description: "Platform pemesanan makanan kantin sekolah berbasis web yang mempercepat transaksi dan meminimalisir antrean.",
-			tech: ["SvelteKit", "Tailwind CSS", "TypeScript"],
+			tech: ["Apa Aja Boleh"],
 			href: "https://github.com/kekukies",
-			image: "/images/Cat Working GIF.gif"
+			image: "/images/gambar e canteen.jpeg"
 		},
 		{
 			title: "JagaCuan",
 			category: "MOBILE APP",
-			stack: "JavaScript · Tailwind",
+			stack: "Apa Aja Boleh",
 			year: "2026",
 			description: "Aplikasi pencatatan tabungan dan keuangan harian yang dirancang untuk membantu mengelola anggaran secara praktis.",
-			tech: ["JavaScript", "Tailwind CSS"],
+			tech: ["Apa Aja Boleh"],
 			href: "https://github.com/kekukies",
-			image: "/images/Dance Dancing GIF.gif"
+			image: "/images/gambar jaga cuan.jpeg"
 		},
 		{
 			title: "Mini Mo Adventure!",
@@ -1013,17 +1014,17 @@
 			description: "Game platformer petualangan seru dengan rintangan menantang yang dibangun menggunakan Construct 3.",
 			tech: ["Construct 3", "Game Design"],
 			href: "https://github.com/kekukies",
-			image: "/images/Question Mark Cat GIF.gif"
+			image: "/images/gambar mini mok.jpeg"
 		},
 		{
 			title: "Knight's Vow: Rise of The Kingdom",
 			category: "GAME DEVELOPMENT",
-			stack: "Construct 3 · Pixel Art",
+			stack: "Unity · Pixel Art",
 			year: "2026",
 			description: "Game aksi petualangan platformer over-world bertema kesatria dengan eksplorasi peta luas dan pertempuran epik.",
-			tech: ["Construct 3", "Game Design", "Pixel Art"],
+			tech: ["Unity", "Game Design", "Pixel Art"],
 			href: "https://github.com/kekukies",
-			image: "/images/Cat Working GIF.gif"
+			image: "/images/Working Chis Sweet Home GIF.gif"
 		}
 	];
 </script>
