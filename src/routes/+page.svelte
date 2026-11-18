@@ -1331,7 +1331,7 @@
 		{
 			title: "Sertifikasi TOEIC (Test of English)",
 			issuer: "Standar Internasional",
-			year: "2025",
+			year: "2026",
 			description: "Sertifikasi kemahiran bahasa Inggris bertaraf internasional untuk mengukur kesiapan komunikasi di lingkungan profesional.",
 			icon: "⭐"
 		},
