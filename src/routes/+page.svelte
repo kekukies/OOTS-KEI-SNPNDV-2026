@@ -166,7 +166,6 @@
 			theme = savedTheme;
 		}
 
-		// Otomatis coba putar audio di awal (di-catch jika diblokir browser sebelum interaksi)
 		if (audioEl) {
 			audioEl.play().catch(() => {
 				isPlaying = false;
@@ -214,12 +213,10 @@
 		};
 
 		guestList = [newMessage, ...guestList];
-
 		guestName = '';
 		guestMessage = '';
 	}
 
-	// Fungsi Terminal CLI
 	async function handleCliSubmit(e: Event) {
 		e.preventDefault();
 		const rawCmd = cliInput.trim();
@@ -278,7 +275,7 @@
 				responseLines = [
 					'Email     : keishaputriratri@gmail.com',
 					'GitHub    : github.com/kekukies',
-					'Instagram : @kekukies'
+					'Instagram : @nicokeiro'
 				];
 				break;
 			default:
@@ -305,7 +302,6 @@
 		if (memoryTimerInterval) clearInterval(memoryTimerInterval);
 	}
 
-	// Fungsi Catch the Bug
 	function startBugGame() {
 		bugScore = 0;
 		bugTimeLeft = 15;
@@ -336,7 +332,6 @@
 		moveBug();
 	}
 
-	// Fungsi Memory Card
 	function startMemoryGame() {
 		memoryScore = 0;
 		memoryTimeLeft = 30;
@@ -406,15 +401,11 @@
 	}
 </script>
 
-<!-- Audio Player Tersembunyi -->
 <audio bind:this={audioEl} src={nowPlaying.audioSrc} loop></audio>
 
 <div class="min-h-dvh bg-bg text-ink transition-colors duration-300 {theme === 'dark' ? 'dark' : ''}">
-	<!-- nav -->
 	<header class="sticky top-0 z-50 backdrop-blur-md bg-bg/80 border-b border-line">
-		<div
-			class="mx-auto flex h-[60px] max-w-[1440px] items-center justify-between px-6 lg:h-[72px] lg:px-24"
-		>
+		<div class="mx-auto flex h-[60px] max-w-[1440px] items-center justify-between px-6 lg:h-[72px] lg:px-24">
 			<a href="/" class="text-[15px] font-semibold tracking-tight hover:opacity-85 transition-opacity lg:text-base">
 				Portofolio Kei <span class="text-primary font-mono text-xs">:p</span>
 			</a>
@@ -430,7 +421,6 @@
 					<a href="#kontak" class="text-sm text-muted hover:text-ink transition-colors">{dict[lang].navContact}</a>
 				</nav>
 
-				<!-- TOMBOL TOGGLE BAHASA (BILINGUAL) -->
 				<button
 					type="button"
 					aria-label="Ganti Bahasa"
@@ -440,59 +430,28 @@
 					{lang === 'id' ? 'EN 🇬🇧' : 'ID 🇮🇩'}
 				</button>
 
-				<!-- TOMBOL TEMA -->
 				<button
 					type="button"
 					aria-label="Ganti tema"
 					onclick={toggleTheme}
 					class="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-surface hover:border-primary transition-all active:scale-95 lg:h-11 lg:w-11 shadow-sm"
 				>
-					<svg
-						width="17"
-						height="17"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						class="dark:hidden transition-transform hover:rotate-45"
-					>
+					<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="dark:hidden transition-transform hover:rotate-45">
 						<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" />
 					</svg>
-					<svg
-						width="17"
-						height="17"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-						class="hidden dark:block transition-transform hover:rotate-90"
-					>
+					<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="hidden dark:block transition-transform hover:rotate-90">
 						<circle cx="12" cy="12" r="4" />
-						<path
-							d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
-						/>
+						<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
 					</svg>
 				</button>
 
-				<!-- TOMBOL MENU MOBILE -->
 				<button
 					type="button"
 					aria-label="Buka menu navigasi"
 					onclick={() => (mobileMenuOpen = !mobileMenuOpen)}
 					class="flex h-10 w-10 items-center justify-center rounded-xl border border-line bg-surface hover:border-primary transition-all lg:hidden shadow-sm"
 				>
-					<svg
-						width="18"
-						height="18"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.5"
-						stroke-linecap="round"
-					>
+					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
 						{#if mobileMenuOpen}
 							<path d="M18 6 6 18M6 6l12 12" />
 						{:else}
@@ -503,67 +462,21 @@
 			</div>
 		</div>
 
-		<!-- DROPDOWN MENU MOBILE -->
 		{#if mobileMenuOpen}
 			<nav class="flex flex-col gap-3 border-t border-line bg-bg px-6 py-4 lg:hidden">
-				<a
-					href="#proyek"
-					onclick={() => (mobileMenuOpen = false)}
-					class="py-1 text-sm text-muted hover:text-ink transition-colors"
-				>
-					{dict[lang].navProjects}
-				</a>
-				<a
-					href="#tentang"
-					onclick={() => (mobileMenuOpen = false)}
-					class="py-1 text-sm text-muted hover:text-ink transition-colors"
-				>
-					{dict[lang].navAbout}
-				</a>
-				<a
-					href="#sertifikat"
-					onclick={() => (mobileMenuOpen = false)}
-					class="py-1 text-sm text-muted hover:text-ink transition-colors"
-				>
-					{dict[lang].navCert}
-				</a>
-				<a
-					href="#minigame"
-					onclick={() => (mobileMenuOpen = false)}
-					class="py-1 text-sm text-muted hover:text-ink transition-colors"
-				>
-					{dict[lang].navGame}
-				</a>
-				<a
-					href="#guestbook"
-					onclick={() => (mobileMenuOpen = false)}
-					class="py-1 text-sm text-muted hover:text-ink transition-colors"
-				>
-					{dict[lang].navGuestbook}
-				</a>
-				<a
-					href="#terminal"
-					onclick={() => (mobileMenuOpen = false)}
-					class="py-1 text-sm text-muted hover:text-ink transition-colors"
-				>
-					{dict[lang].navTerminal}
-				</a>
-				<a
-					href="#kontak"
-					onclick={() => (mobileMenuOpen = false)}
-					class="py-1 text-sm text-muted hover:text-ink transition-colors"
-				>
-					{dict[lang].navContact}
-				</a>
+				<a href="#proyek" onclick={() => (mobileMenuOpen = false)} class="py-1 text-sm text-muted hover:text-ink transition-colors">{dict[lang].navProjects}</a>
+				<a href="#tentang" onclick={() => (mobileMenuOpen = false)} class="py-1 text-sm text-muted hover:text-ink transition-colors">{dict[lang].navAbout}</a>
+				<a href="#sertifikat" onclick={() => (mobileMenuOpen = false)} class="py-1 text-sm text-muted hover:text-ink transition-colors">{dict[lang].navCert}</a>
+				<a href="#minigame" onclick={() => (mobileMenuOpen = false)} class="py-1 text-sm text-muted hover:text-ink transition-colors">{dict[lang].navGame}</a>
+				<a href="#guestbook" onclick={() => (mobileMenuOpen = false)} class="py-1 text-sm text-muted hover:text-ink transition-colors">{dict[lang].navGuestbook}</a>
+				<a href="#terminal" onclick={() => (mobileMenuOpen = false)} class="py-1 text-sm text-muted hover:text-ink transition-colors">{dict[lang].navTerminal}</a>
+				<a href="#kontak" onclick={() => (mobileMenuOpen = false)} class="py-1 text-sm text-muted hover:text-ink transition-colors">{dict[lang].navContact}</a>
 			</nav>
 		{/if}
 	</header>
 
-	<!-- hero -->
 	<section class="mx-auto max-w-[1440px] px-6 pt-16 pb-14 lg:px-24 lg:pt-[120px]">
-		<h1
-			class="text-[52px] leading-[0.92] font-semibold tracking-[-2px] lg:text-[130px] lg:tracking-[-6px] text-ink"
-		>
+		<h1 class="text-[52px] leading-[0.92] font-semibold tracking-[-2px] lg:text-[130px] lg:tracking-[-6px] text-ink">
 			{dict[lang].heroTitle}
 		</h1>
 
@@ -573,16 +486,10 @@
 			</p>
 
 			<div class="flex flex-wrap items-center gap-3">
-				<a
-					href="#proyek"
-					class="flex h-12 items-center rounded-xl bg-primary px-6 text-[15px] font-medium text-on-primary shadow-sm hover:opacity-95 transition-all"
-				>
+				<a href="#proyek" class="flex h-12 items-center rounded-xl bg-primary px-6 text-[15px] font-medium text-on-primary shadow-sm hover:opacity-95 transition-all">
 					{dict[lang].btnProjects}
 				</a>
-				<a
-					href="#kontak"
-					class="flex h-12 items-center rounded-xl border border-line px-6 text-[15px] text-ink hover:border-primary transition-all"
-				>
+				<a href="#kontak" class="flex h-12 items-center rounded-xl border border-line px-6 text-[15px] text-ink hover:border-primary transition-all">
 					{dict[lang].btnContact}
 				</a>
 			</div>
@@ -595,30 +502,16 @@
 					</p>
 				</div>
 
-				<!-- WIDGET NOW PLAYING -->
 				<button
 					type="button"
 					onclick={toggleMusic}
 					title="Klik untuk Play / Pause audio"
 					class="flex w-fit items-center gap-3.5 rounded-2xl border border-line bg-surface px-4 py-2.5 text-left shadow-sm transition-all hover:border-primary active:scale-98"
 				>
-					<!-- Animasi Equalizer Bar -->
 					<div class="flex h-4 items-end gap-[3px]">
-						<span
-							class="w-[3px] rounded-full bg-primary transition-all duration-300 {isPlaying
-								? 'h-4 animate-bounce'
-								: 'h-1.5'}"
-						></span>
-						<span
-							class="w-[3px] rounded-full bg-primary transition-all duration-300 {isPlaying
-								? 'h-2.5 animate-pulse'
-								: 'h-1.5'}"
-						></span>
-						<span
-							class="w-[3px] rounded-full bg-primary transition-all duration-300 {isPlaying
-								? 'h-3.5 animate-bounce'
-								: 'h-1.5'}"
-						></span>
+						<span class="w-[3px] rounded-full bg-primary transition-all duration-300 {isPlaying ? 'h-4 animate-bounce' : 'h-1.5'}"></span>
+						<span class="w-[3px] rounded-full bg-primary transition-all duration-300 {isPlaying ? 'h-2.5 animate-pulse' : 'h-1.5'}"></span>
+						<span class="w-[3px] rounded-full bg-primary transition-all duration-300 {isPlaying ? 'h-3.5 animate-bounce' : 'h-1.5'}"></span>
 					</div>
 
 					<div class="flex flex-col">
@@ -634,19 +527,13 @@
 		</div>
 	</section>
 
-	<!-- band (GIF Cat Working) -->
 	<div class="border-t border-line overflow-hidden">
-		<img
-			src="/images/computer desk.gif"
-			alt="Cat Working"
-			class="h-[220px] w-full object-cover lg:h-[420px]"
-		/>
+		<img src="/images/computer desk.gif" alt="Cat Working" class="h-[220px] w-full object-cover lg:h-[420px]" />
 		<div class="mx-auto max-w-[1440px] px-6 py-4 lg:px-24">
 			<p class="font-mono text-[11px] tracking-[1.1px] text-muted">SMK NEGERI 8 SEMARANG · 2026</p>
 		</div>
 	</div>
 
-	<!-- proyek -->
 	<section id="proyek" class="border-t border-line">
 		<div class="mx-auto max-w-[1440px] px-6 pt-5 pb-14 lg:px-24 lg:pb-24">
 			<div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
@@ -654,15 +541,12 @@
 					{dict[lang].projectsTitle} ({filteredProjects.length})
 				</p>
 
-				<!-- FILTER KATEGORI PROYEK -->
 				<div class="flex flex-wrap gap-2">
 					{#each categories as category}
 						<button
 							type="button"
 							onclick={() => (selectedCategory = category)}
-							class="rounded-xl border px-3 py-1.5 font-mono text-[11px] tracking-[1.1px] transition-all {selectedCategory === category
-								? 'border-primary bg-primary text-on-primary shadow-sm'
-								: 'border-line bg-surface text-muted hover:text-ink'}"
+							class="rounded-xl border px-3 py-1.5 font-mono text-[11px] tracking-[1.1px] transition-all {selectedCategory === category ? 'border-primary bg-primary text-on-primary shadow-sm' : 'border-line bg-surface text-muted hover:text-ink'}"
 						>
 							{category}
 						</button>
@@ -678,19 +562,13 @@
 		</div>
 	</section>
 
-	<!-- tentang -->
 	<section id="tentang" class="border-t border-line">
 		<div class="mx-auto max-w-[1440px] px-6 pt-5 pb-14 lg:px-24 lg:pb-24">
 			<p class="font-mono text-[11px] tracking-[1.1px] text-ink">{dict[lang].aboutTitle}</p>
 
 			<div class="mt-7 flex flex-col items-start gap-8 lg:mt-10 lg:flex-row lg:gap-24">
-				<!-- FOTO PROFIL -->
 				<div class="aspect-[4/5] w-full lg:w-[420px] shrink-0 overflow-hidden rounded-2xl border border-line shadow-sm">
-					<img
-						src="/images/gambar keisha cantik.jpeg"
-						alt="Pretty Kei"
-						class="h-full w-full object-cover"
-					/>
+					<img src="/images/gambar keisha cantik.jpeg" alt="Pretty Kei" class="h-full w-full object-cover" />
 				</div>
 
 				<div class="flex w-full flex-col gap-7">
@@ -698,7 +576,6 @@
 						{profile.bio}
 					</p>
 
-					<!-- KOTAK INFO TENTANG -->
 					<div class="flex flex-col divide-y divide-line rounded-2xl border border-line bg-surface p-4 shadow-sm">
 						{#each profile.facts as fact}
 							<div class="flex items-center justify-between gap-8 py-3">
@@ -714,10 +591,7 @@
 						<span class="font-mono text-[11px] tracking-[1.1px] text-muted">KEAHLIAN</span>
 						<div class="flex flex-wrap gap-2">
 							{#each profile.skills as skill}
-								<!-- BADGE KEAHLIAN -->
-								<span
-									class="border border-line bg-surface px-3.5 py-1.5 rounded-xl font-mono text-[11px] tracking-[1.1px] text-ink shadow-sm hover:border-primary transition-colors"
-								>
+								<span class="border border-line bg-surface px-3.5 py-1.5 rounded-xl font-mono text-[11px] tracking-[1.1px] text-ink shadow-sm hover:border-primary transition-colors">
 									{skill}
 								</span>
 							{/each}
@@ -728,7 +602,6 @@
 		</div>
 	</section>
 
-	<!-- SERTIFIKAT & PENCAPAIAN -->
 	<section id="sertifikat" class="border-t border-line">
 		<div class="mx-auto max-w-[1440px] px-6 pt-5 pb-14 lg:px-24 lg:pb-24">
 			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -767,7 +640,6 @@
 		</div>
 	</section>
 
-	<!-- ARCADE GAME CENTER (2 IKON PILIHAN GAME) -->
 	<section id="minigame" class="border-t border-line">
 		<div class="mx-auto max-w-[1440px] px-6 pt-5 pb-14 lg:px-24 lg:pb-24">
 			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -788,9 +660,7 @@
 
 			<div class="mt-7 rounded-2xl border border-line bg-surface p-8 shadow-sm">
 				{#if activeGame === 'none'}
-					<!-- MENU UTAMA: 2 IKON GAME -->
 					<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 py-6 max-w-2xl mx-auto">
-						<!-- Tombol Ikon Game 1: Catch the Bug -->
 						<button
 							type="button"
 							onclick={() => { activeGame = 'bug'; startBugGame(); }}
@@ -805,7 +675,6 @@
 							</div>
 						</button>
 
-						<!-- Tombol Ikon Game 2: Memory Card -->
 						<button
 							type="button"
 							onclick={() => { activeGame = 'memory'; startMemoryGame(); }}
@@ -822,7 +691,6 @@
 					</div>
 
 				{:else if activeGame === 'bug'}
-					<!-- GAME 1: CATCH THE BUG -->
 					<div class="flex flex-col gap-6">
 						<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 							<div>
@@ -870,7 +738,6 @@
 					</div>
 
 				{:else if activeGame === 'memory'}
-					<!-- GAME 2: MEMORY CARD (12 KARTU / 6 PASANG, 30 DETIK) -->
 					<div class="flex flex-col gap-6">
 						<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
 							<div>
@@ -941,7 +808,6 @@
 		</div>
 	</section>
 
-	<!-- TELL ME SOMETHING! -->
 	<section id="guestbook" class="border-t border-line">
 		<div class="mx-auto max-w-[1440px] px-6 pt-5 pb-14 lg:px-24 lg:pb-24">
 			<p class="font-mono text-[11px] tracking-[1.1px] text-ink">{dict[lang].guestTitle}</p>
@@ -952,7 +818,6 @@
 						{dict[lang].guestDesc}
 					</p>
 
-					<!-- Form Input -->
 					<form
 						onsubmit={addGuestMessage}
 						class="flex w-full flex-col gap-4 p-6 rounded-2xl shadow-sm border border-line bg-surface"
@@ -988,7 +853,6 @@
 					</form>
 				</div>
 
-				<!-- Daftar Pesan -->
 				<div class="flex w-full flex-col gap-4 lg:flex-1">
 					<span class="font-mono text-[11px] tracking-[1.1px] text-muted">{dict[lang].guestListTitle} ({guestList.length})</span>
 					{#if guestList.length === 0}
@@ -1013,7 +877,6 @@
 		</div>
 	</section>
 
-	<!-- INTERACTIVE TERMINAL (CLI) -->
 	<section id="terminal" class="border-t border-line">
 		<div class="mx-auto max-w-[1440px] px-6 pt-5 pb-14 lg:px-24 lg:pb-24">
 			<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
@@ -1025,7 +888,6 @@
 			</div>
 
 			<div class="mt-7 overflow-hidden rounded-2xl border border-line bg-[#1c1917] text-[#f5f5f4] shadow-md font-mono text-xs sm:text-sm">
-				<!-- Header Bar Ala MacOS / Linux Terminal -->
 				<div class="flex items-center justify-between border-b border-[#292524] bg-[#292524] px-4 py-3">
 					<div class="flex items-center gap-2">
 						<span class="h-3 w-3 rounded-full bg-[#ef4444]"></span>
@@ -1036,11 +898,7 @@
 					<div class="w-10"></div>
 				</div>
 
-				<!-- Layar Output Terminal -->
-				<div
-					bind:this={cliContainer}
-					class="flex h-[260px] flex-col gap-1.5 overflow-y-auto p-5 leading-relaxed"
-				>
+				<div bind:this={cliContainer} class="flex h-[260px] flex-col gap-1.5 overflow-y-auto p-5 leading-relaxed">
 					{#each cliHistory as line}
 						<div class="{line.type === 'command' ? 'text-[#d4a373] font-semibold mt-1' : 'text-[#e7e5e4] whitespace-pre-wrap'}">
 							{line.text}
@@ -1048,11 +906,7 @@
 					{/each}
 				</div>
 
-				<!-- Baris Input Perintah -->
-				<form
-					onsubmit={handleCliSubmit}
-					class="flex items-center gap-2 border-t border-[#292524] bg-[#1c1917] px-5 py-3.5"
-				>
+				<form onsubmit={handleCliSubmit} class="flex items-center gap-2 border-t border-[#292524] bg-[#1c1917] px-5 py-3.5">
 					<span class="text-[#d4a373] font-bold shrink-0">guest@kei:~$</span>
 					<input
 						type="text"
@@ -1062,10 +916,7 @@
 						spellcheck="false"
 						class="w-full bg-transparent text-[#f5f5f4] outline-none placeholder:text-[#57534e]"
 					/>
-					<button
-						type="submit"
-						class="rounded-lg bg-[#292524] px-3 py-1 text-xs text-[#d4a373] hover:bg-[#44403c] transition-colors shrink-0"
-					>
+					<button type="submit" class="rounded-lg bg-[#292524] px-3 py-1 text-xs text-[#d4a373] hover:bg-[#44403c] transition-colors shrink-0">
 						Enter ↵
 					</button>
 				</form>
@@ -1073,19 +924,16 @@
 		</div>
 	</section>
 
-	<!-- kontak -->
 	<section id="kontak" class="border-t border-line">
 		<div class="mx-auto max-w-[1440px] px-6 pt-5 pb-14 lg:px-24 lg:pb-24">
 			<p class="font-mono text-[11px] tracking-[1.1px] text-ink">{dict[lang].contactTitle}</p>
 
 			<div class="mt-7 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start lg:mt-10">
-				<!-- Sisi Kiri (Teks & Tombol Salin Email / Tautan Sosial Media) - Mengambil 5 Kolom -->
 				<div class="flex flex-col gap-5 lg:col-span-5">
 					<p class="text-[17px] leading-[1.6] text-muted lg:text-xl">
 						{dict[lang].contactDesc}
 					</p>
 
-					<!-- KARTU SALIN EMAIL CEPAT -->
 					<div class="flex items-center justify-between gap-3 rounded-2xl border border-line bg-surface p-4 shadow-sm">
 						<span class="font-mono text-xs text-ink truncate">keishaputriratri@gmail.com</span>
 						<button
@@ -1097,10 +945,9 @@
 						</button>
 					</div>
 
-					<!-- KARTU INSTAGRAM & SOSIAL MEDIA -->
 					<div class="flex items-center gap-3">
 						<a
-							href="https://instagram.com/kekukies"
+							href="https://instagram.com/nicokeiro"
 							target="_blank"
 							rel="noopener noreferrer"
 							class="flex items-center gap-3 flex-1 rounded-2xl border border-line bg-surface p-4 shadow-sm hover:border-primary transition-all group"
@@ -1114,13 +961,12 @@
 							</div>
 							<div class="flex flex-col">
 								<span class="font-mono text-[10px] tracking-[1.1px] text-muted uppercase">Instagram</span>
-								<span class="text-xs font-medium text-ink">@kekukies</span>
+								<span class="text-xs font-medium text-ink">@nicokeiro</span>
 							</div>
 						</a>
 					</div>
 				</div>
 
-				<!-- Sisi Kanan (Form Kontak) - Mengambil 7 Kolom -->
 				<form
 					method="POST"
 					action="?/kirim"
@@ -1173,16 +1019,7 @@
 						class="flex h-12 items-center justify-center gap-2 px-6 text-[15px] font-medium rounded-xl transition-all {status === 'loading' ? 'border border-line bg-surface text-muted' : 'bg-primary text-on-primary hover:opacity-95'}"
 					>
 						{#if status === 'loading'}
-							<svg
-								width="16"
-								height="16"
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="1.5"
-								stroke-linecap="round"
-								class="animate-spin"
-							>
+							<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="animate-spin">
 								<path d="M12 3a9 9 0 1 0 9 9" />
 							</svg>
 							Mengirim...
@@ -1191,50 +1028,20 @@
 						{/if}
 					</button>
 
-					<!-- KOTAK STATUS -->
 					{#if status !== 'idle'}
 						<div class="flex items-center gap-3 border border-line bg-bg px-4 py-3.5 rounded-xl">
 							{#if status === 'loading'}
-								<svg
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="1.5"
-									stroke-linecap="round"
-									class="animate-spin text-muted"
-								>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" class="animate-spin text-muted">
 									<path d="M12 3a9 9 0 1 0 9 9" />
 								</svg>
 								<span class="text-sm text-muted">Mengirim pesan...</span>
 							{:else if status === 'success'}
-								<svg
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="1.5"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									class="text-success"
-								>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-success">
 									<path d="M20 6 9 17l-5-5" />
 								</svg>
 								<span class="text-sm font-medium text-success">Pesan terkirim. Terima kasih!</span>
 							{:else}
-								<svg
-									width="16"
-									height="16"
-									viewBox="0 0 24 24"
-									fill="none"
-									stroke="currentColor"
-									stroke-width="1.5"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									class="text-danger"
-								>
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-danger">
 									<circle cx="12" cy="12" r="9" />
 									<path d="M12 8v5M12 16.5v.01" />
 								</svg>
@@ -1247,44 +1054,26 @@
 		</div>
 	</section>
 
-	<!-- footer -->
 	<footer class="border-t border-line">
 		<div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-6 py-14 lg:px-24">
-			<p
-				class="max-w-[640px] text-[34px] leading-[1.05] font-medium tracking-[-0.6px] lg:text-[48px] lg:tracking-[-1.2px] text-ink"
-			>
+			<p class="max-w-[640px] text-[34px] leading-[1.05] font-medium tracking-[-0.6px] lg:text-[48px] lg:tracking-[-1.2px] text-ink">
 				{dict[lang].footerText}
 			</p>
 
-			<div
-				class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-6"
-			>
+			<div class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:justify-between lg:gap-6">
 				<a href="mailto:keishaputriratri@gmail.com" class="font-mono text-xs tracking-[1.1px] text-primary">
 					keishaputriratri@gmail.com
 				</a>
 				<div class="flex items-center gap-6">
 					<a href="#proyek" class="font-mono text-[11px] tracking-[1.1px] text-muted hover:text-ink transition-colors">PROYEK</a>
-					<a
-						href="https://github.com/kekukies"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="font-mono text-[11px] tracking-[1.1px] text-muted hover:text-ink transition-colors">GITHUB</a
-					>
-					<a
-						href="https://instagram.com/kekukies"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="font-mono text-[11px] tracking-[1.1px] text-muted hover:text-ink transition-colors">INSTAGRAM</a
-					>
-					<a href="mailto:keishaputriratri@gmail.com" class="font-mono text-[11px] tracking-[1.1px] text-muted hover:text-ink transition-colors">
-						EMAIL
-					</a>
+					<a href="https://github.com/kekukies" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] tracking-[1.1px] text-muted hover:text-ink transition-colors">GITHUB</a>
+					<a href="https://instagram.com/nicokeiro" target="_blank" rel="noopener noreferrer" class="font-mono text-[11px] tracking-[1.1px] text-muted hover:text-ink transition-colors">INSTAGRAM</a>
+					<a href="mailto:keishaputriratri@gmail.com" class="font-mono text-[11px] tracking-[1.1px] text-muted hover:text-ink transition-colors">EMAIL</a>
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	<!-- TOMBOL KEMBALI KE ATAS -->
 	{#if showScrollTop}
 		<button
 			type="button"
@@ -1292,16 +1081,7 @@
 			onclick={scrollToTop}
 			class="fixed right-6 bottom-6 z-40 flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-surface text-ink shadow-md hover:border-primary transition-all active:scale-95"
 		>
-			<svg
-				width="18"
-				height="18"
-				viewBox="0 0 24 24"
-				fill="none"
-				stroke="currentColor"
-				stroke-width="1.5"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-			>
+			<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
 				<path d="m18 15-6-6-6 6" />
 			</svg>
 		</button>
